@@ -72,6 +72,23 @@ def get_random_color():
 def get_random_color2():
   return "#%06x" % random.randint(0, 0xFFFFFF)
 
+def get_random_color3():
+  return "#%06x" % random.randint(0, 0xFFFFFF)
+def get_random_color4():
+  return "#%06x" % random.randint(0, 0xFFFFFF)
+def get_random_color5():
+  return "#%06x" % random.randint(0, 0xFFFFFF)
+def get_random_color6():
+  return "#%06x" % random.randint(0, 0xFFFFFF)
+def get_random_color7():
+  return "#%06x" % random.randint(0, 0xFFFFFF)
+def get_random_color8():
+  return "#%06x" % random.randint(0, 0xFFFFFF)
+def get_random_color9():
+  return "#%06x" % random.randint(0, 0xFFFFFF)
+def get_random_color10():
+  return "#%06x" % random.randint(0, 0xFFFFFF)
+
 client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
@@ -102,14 +119,14 @@ data = {
         "air":{"value":airText,"color":"#00FF00" if airText=="优" else "#FF9900" if airText=="良" else "#FF0000" },
         "aqi":{"value":aqi},
         "pm25":{"value":pm25},
-        "yundong":{"value":yundong},"yundongText":{"value":yundongText},
-        "chuanyi":{"value":chuanyi},"chuanyiText":{"value":chuanyiText},
-        "huazhuang":{"value":huazhuang},"huazhuangText":{"value":huazhuangText},
-        "guomin":{"value":guomin},"guominText":{"value":guominText},
-        "ganmao":{"value":ganmao},"ganmaoText":{"value":ganmaoText},
-        "shushi":{"value":shushi},"shushiText":{"value":shushiText},
-        "fangshai":{"value":fangshai},"fangshaiText":{"value":fangshaiText},
-        "lvyou":{"value":lvyou},"lvyouText":{"value":lvyouText},
+        "yundong":{"value":yundong},"yundongText":{"value":yundongText+" ", "color":get_random_color3()},
+        "chuanyi":{"value":chuanyi},"chuanyiText":{"value":chuanyiText+" ", "color":get_random_color4()},
+        "huazhuang":{"value":huazhuang},"huazhuangText":{"value":huazhuangText+" ", "color":get_random_color5()},
+        "guomin":{"value":guomin},"guominText":{"value":guominText+" ", "color":get_random_color6()},
+        "ganmao":{"value":ganmao},"ganmaoText":{"value":ganmaoText+" ", "color":get_random_color7()},
+        "shushi":{"value":shushi},"shushiText":{"value":shushiText+" ", "color":get_random_color8()},
+        "fangshai":{"value":fangshai},"fangshaiText":{"value":fangshaiText+" ", "color":get_random_color9()},
+        "lvyou":{"value":lvyou},"lvyouText":{"value":lvyouText+" ", "color":get_random_color10()},
   
   
         "love_days":{"value":get_count()},
