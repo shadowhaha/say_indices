@@ -55,13 +55,13 @@ def get_birthday():
   return (next - today).days
 
 def get_words():
-  words = requests.get("https://api.shadiao.pro/chp")
+  words = requests.get("https://api.shadiao.pro/chp", verify=False)
   if words.status_code != 200:
     return get_words()
   return words.json()['data']['text']
 
 def get_words2():
-  words2 = requests.get("https://saying.api.azwcl.com/saying/get")
+  words2 = requests.get("https://saying.api.azwcl.com/saying/get", verify=False)
   if words2.status_code != 200:
     return get_words2()
   return words2.json()['data']['content'],words2.json()['data']['author']
