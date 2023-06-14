@@ -60,11 +60,11 @@ def get_words():
     return get_words()
   return words.json()['data']['text']
 
-def get_words2():
-  words2 = requests.get("https://saying.api.azwcl.com/saying/get", verify=False)
-  if words2.status_code != 200:
-    return get_words2()
-  return words2.json()['data']['content'],words2.json()['data']['author']
+#def get_words2():
+#  words2 = requests.get("https://saying.api.azwcl.com/saying/get", verify=False)
+#  if words2.status_code != 200:
+#    return get_words2()
+#  return words2.json()['data']['content'],words2.json()['data']['author']
 
 def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
@@ -97,7 +97,7 @@ weatherTextDay, weatherTextNight,tempMax,tempMin,windDay,windNight,humidityToday
 yundong,yundongText,chuanyi,chuanyiText,huazhuang,huazhuangText,guomin,guominText,ganmao,ganmaoText,shushi,shushiText,fangshai,fangshaiText,lvyou,lvyouText = get_weather_indices()
 airText,aqi,pm25=get_weather_air()
 
-text, author = get_words2()
+#text, author = get_words2()
 
 data = {
         "weatherTextNow":{"value":weatherTextNow},
@@ -132,7 +132,7 @@ data = {
         "love_days":{"value":get_count()},
         "birthday_left":{"value":get_birthday()},
         "words":{"value":get_words()+" ", "color":get_random_color()},
-        "words2":{"value":text+' —— '+ author+"  ", "color":get_random_color2()}
+      #  "words2":{"value":text+' —— '+ author+"  ", "color":get_random_color2()}
        }
 res = wm.send_template(user_id, template_id, data)
 print(res)
